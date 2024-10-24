@@ -7,7 +7,7 @@ from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
-from ulauncher.api.shared.action.OpenAction import OpenAction
+from ulauncher.api.shared.action.RunScriptAction import RunScriptAction
 from ulauncher.api.shared.action.DoNothingAction import DoNothingAction
 
 logger = logging.getLogger(__name__)
@@ -153,7 +153,7 @@ class KeywordQueryEventListener(EventListener):
                 name += ' | %s' % code
 
             items.append(ExtensionResultItem(icon=icon, name=name,
-                                             on_enter=OpenAction(f'ydotool type {code}')))
+                                             on_enter=RunScriptAction(f'ydotool type {code}')))
 
         return RenderResultListAction(items)
 
