@@ -153,7 +153,7 @@ class KeywordQueryEventListener(EventListener):
                 name += ' | %s' % code
 
             items.append(ExtensionResultItem(icon=icon, name=name,
-                                             on_enter=RunScriptAction(f'ydotool type {code}')))
+                                             on_enter=RunScriptAction(f'wtype {code}')))
 
         return RenderResultListAction(items)
 
